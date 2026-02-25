@@ -1,0 +1,10 @@
+// Custom styles for About page if needed.
+// Heavy reliance on Tailwind classes in HTML.
+
+.skew-x-\[-20deg\] {
+    transform: skewX(-20deg);
+}
+
+.skew-x-\[20deg\] {
+    transform: skewX(20deg);
+}

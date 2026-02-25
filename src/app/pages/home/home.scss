@@ -1,0 +1,235 @@
+/* widget: Expanding Content Cards */
+
+.exp-wrapper {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.exp-wrapper .ue_options {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    justify-content: center;
+    min-width: 200px;
+    width: 100%;
+    gap: 15px;
+    height: 500px;
+}
+
+.exp-wrapper .ue_options .ue_option {
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 2rem;
+    transition: flex-grow 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    flex-grow: 1;
+    min-width: 80px;
+}
+
+.exp-wrapper .ue_options .ue_option::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color .3s;
+}
+
+.exp-wrapper .ue_options .ue_option.active::after {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.exp-wrapper .ue_options .ue_option.active {
+    flex-grow: 10000;
+}
+
+.exp-wrapper .ue_options .ue_option:not(.active) {
+    justify-content: center;
+}
+
+.exp-wrapper .ue_options .ue_option .ue_shadow {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    z-index: 1;
+    transition: 800ms;
+}
+
+.exp-wrapper .ue_options .ue_option .ue_label {
+    display: flex;
+    z-index: 2;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.exp-wrapper .ue_options .ue_option.active .ue_label {
+    animation-name: sub-content-fade;
+    animation-duration: 0.8s;
+}
+
+@keyframes sub-content-fade {
+    0% {
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.exp-wrapper .ue_content_link {
+    width: 100%
+}
+
+.exp-wrapper .ue_options .ue_option:not(.active) .ue_content_link {
+    pointer-events: none;
+}
+
+.exp-wrapper .ue_content_link.ue_content_link--hover-mode {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Inactive State Layout */
+.exp-wrapper .ue_options .ue_option:not(.active) .ue_label {
+    justify-content: flex-end;
+    /* Align to the bottom when the text is vertical */
+    padding-bottom: 2rem;
+}
+
+.exp-wrapper .ue_options .ue_option:not(.active) .ue_info {
+    margin-bottom: 1.5rem;
+    order: 1;
+    /* Heading above icon */
+}
+
+.exp-wrapper .ue_options .ue_option:not(.active) .ue_icon {
+    order: 2;
+    /* Icon at the bottom */
+}
+
+.exp-wrapper .ue_options .ue_option:not(.active) .ue_main {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    white-space: nowrap;
+    font-size: 1.125rem;
+}
+
+/* Active State Layout */
+.exp-wrapper .ue_options .ue_option.active .ue_icon {
+    order: 1;
+    /* Icon above heading */
+    margin-bottom: 1rem;
+}
+
+.exp-wrapper .ue_options .ue_option.active .ue_info {
+    order: 2;
+    /* Heading below icon */
+}
+
+.exp-wrapper .ue_options .ue_option.active .ue_main {
+    font-size: 2rem;
+    /* Larger text for active */
+}
+
+/* General Styling */
+.ue_main {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+.ue_icon span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: white;
+    color: #3b07e6;
+    /* Blueish purple color matching your design */
+    border-radius: 9999px;
+    font-weight: bold;
+    font-size: 0.875rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    transition: all 0.5s ease;
+}
+
+.ue_option.active .ue_icon span {
+    width: 4rem;
+    /* Larger circle in center for active state */
+    height: 4rem;
+    font-size: 1.25rem;
+}
+
+@media screen and (max-width: 500px) {
+    .exp-wrapper .ue_options::after {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    .exp-wrapper .ue_options {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .exp-wrapper .ue_options .ue_option {
+        width: 100%;
+        height: 80px;
+        flex-grow: 0;
+    }
+
+    .exp-wrapper .ue_options .ue_option.active {
+        height: 300px;
+        flex-grow: 0;
+    }
+
+    /* Reset to Horizontal for Inactive Mobile */
+    .exp-wrapper .ue_options .ue_option:not(.active) .ue_label {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding-left: 20px;
+        padding-bottom: 0;
+    }
+
+    .exp-wrapper .ue_options .ue_option:not(.active) .ue_icon {
+        order: 1;
+        /* Icon Left */
+        margin-right: 20px;
+    }
+
+    .exp-wrapper .ue_options .ue_option:not(.active) .ue_info {
+        order: 2;
+        /* Heading Right */
+        margin-bottom: 0;
+    }
+
+    .exp-wrapper .ue_options .ue_option:not(.active) .ue_main {
+        writing-mode: horizontal-tb;
+        transform: rotate(0deg);
+    }
+}

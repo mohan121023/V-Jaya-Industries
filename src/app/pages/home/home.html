@@ -1,0 +1,135 @@
+<div class="w-full bg-gray-50 flex flex-col items-center overflow-x-hidden min-h-screen font-sans">
+
+    <!-- Hero / Carousel Section -->
+    <section class="max-w-7xl w-full mx-auto px-4 py-8 mt-4">
+        <div class="exp-wrapper">
+            <div class="ue_options uc-items-wrapper">
+
+                <div *ngFor="let item of heroCarouselItems; let i = index" class="ue_option"
+                    [ngClass]="{'active': activeIndex === i}" [style.background-image]="'url(' + item.image + ')'"
+                    (mouseenter)="setActive(i)">
+
+                    <div class="ue_shadow"></div>
+
+                    <div class="ue_label">
+                        <div class="ue_icon graphic_element_text">
+                            <span>{{item.id}}</span>
+                        </div>
+                        <a class="ue_content_link ue_content_link--hover-mode" [routerLink]="item.link"></a>
+
+                        <div class="ue_info">
+                            <div class="ue_main">{{item.title}}</div>
+                            <div class="ue_sub"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry We Serve Section -->
+    <section class="max-w-7xl w-full mx-auto px-4 py-16 text-center">
+        <h2 class="text-4xl font-extrabold text-slate-800 mb-4 tracking-tight">Industry We Serve & Services We Offer
+        </h2>
+        <div class="w-24 h-1 bg-yellow-500 mx-auto mb-16 rounded-full"></div>
+
+        <div class="flex flex-col gap-8">
+            <!-- Row 1 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div *ngFor="let card of servicesRow1"
+                    class="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:-translate-y-1">
+                    <div class="h-48 overflow-hidden bg-gray-100 p-6 flex items-center justify-center">
+                        <img [src]="card.image" alt="{{card.title}}"
+                            class="max-h-full max-w-full object-contain mix-blend-multiply transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow items-center justify-between">
+                        <h3 class="text-lg font-bold text-gray-800 mb-6">{{card.title}}</h3>
+                        <button [routerLink]="card.link"
+                            class="bg-[#1e3246] hover:bg-[#2c4762] text-white text-sm font-medium py-2.5 px-6 rounded transition-colors duration-200 w-3/4 shadow-sm">
+                            Learn more
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center mt-4">
+                <div *ngFor="let card of servicesRow2"
+                    class="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:-translate-y-1">
+                    <div class="h-48 overflow-hidden bg-gray-100 p-6 flex items-center justify-center">
+                        <img [src]="card.image" alt="{{card.title}}"
+                            class="max-h-full max-w-full object-contain mix-blend-multiply transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow items-center justify-between">
+                        <h3 class="text-lg font-bold text-gray-800 mb-6">{{card.title}}</h3>
+                        <button [routerLink]="card.link"
+                            class="bg-[#1e3246] hover:bg-[#2c4762] text-white text-sm font-medium py-2.5 px-6 rounded transition-colors duration-200 w-3/4 shadow-sm">
+                            Learn more
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get In Touch Section -->
+    <section class="max-w-6xl w-full mx-auto px-4 py-16 mb-16">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-extrabold text-slate-800 mb-4 tracking-tight">Get In Touch</h2>
+            <div class="w-24 h-1 bg-yellow-500 mx-auto rounded-full"></div>
+        </div>
+
+        <div
+            class="flex flex-col md:flex-row gap-12 items-stretch bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 overflow-hidden rounded-xl shadow-inner relative group">
+                <div
+                    class="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors duration-500 z-10">
+                </div>
+                <img src="https://v-jayaindustries.com/wp-content/uploads/2024/06/pros-and-cons-of-contract-manufacturing-1024x683.jpg"
+                    alt="Factory View"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            </div>
+
+            <!-- Right Form -->
+            <div class="w-full md:w-1/2 flex flex-col justify-center">
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Name <span
+                                class="text-red-500">*</span></label>
+                        <input type="text" placeholder="Name"
+                            class="w-full px-4 py-3 rounded-md border border-gray-200 bg-gray-50 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-800">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Mobile Number <span
+                                class="text-red-500">*</span></label>
+                        <input type="tel" placeholder="Mobile Number"
+                            class="w-full px-4 py-3 rounded-md border border-gray-200 bg-gray-50 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-800">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" placeholder="Email"
+                            class="w-full px-4 py-3 rounded-md border border-gray-200 bg-gray-50 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-800">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                        <textarea rows="4" placeholder="Message"
+                            class="w-full px-4 py-3 rounded-md border border-gray-200 bg-gray-50 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-800 resize-none"></textarea>
+                    </div>
+
+                    <button type="button"
+                        class="w-full bg-[#1e3246] hover:bg-[#2c4762] text-white font-semibold py-3.5 px-6 rounded-md shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5">
+                        Send
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+</div>

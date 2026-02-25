@@ -1,0 +1,135 @@
+<div class="w-full bg-white flex flex-col items-center overflow-x-hidden min-h-screen font-sans">
+
+    <!-- About Banner Background (Image) -->
+    <div class="w-full relative bg-[#1e3246] h-[250px] md:h-[350px] overflow-hidden flex items-center">
+        <!-- Exact banner image spanning full width -->
+        <img src="/image/about-banner.jpg" alt="About Us Banner" class="absolute inset-0 w-full h-full object-cover">
+
+        <!-- Text container -->
+        <div class="max-w-7xl mx-auto px-4 w-full relative z-20">
+            <h1 class="text-3xl md:text-5xl font-bold text-white tracking-wide drop-shadow-md">About Us</h1>
+        </div>
+    </div>
+
+    <!-- Intro Text Section -->
+    <section class="max-w-5xl w-full mx-auto px-4 py-16 text-center">
+
+        <div class="mb-8 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#1e3246] inline-block mb-3">V-Jaya Industries</h2>
+            <div class="h-[2px] w-full bg-[#fdbd10] mx-auto rounded"></div>
+        </div>
+
+        <p class="text-gray-600 leading-relaxed mb-6 text-[13px] md:text-sm text-center px-4 md:px-16">
+            Founded in 1992 as Royal Die Casting, V-JAYA revolutionized aluminum die casting in our city. Starting with
+            supplying door hardware and castings to the Indian market, our expansion into the automotive industry in the
+            early 2000s marked a pivotal moment. From our humble beginnings with one die casting machine, we have grown
+            to operate seven machines equipped with in-house tool making capabilities.
+        </p>
+
+        <p class="text-gray-600 leading-relaxed text-[13px] md:text-sm text-center px-4 md:px-16">
+            In addition to die casting, our versatile manufacturing capabilities span steel (cutting and stamping),
+            plastic (injection molding), brass, zamak, wood, and ceramic products. Known for our reliability and
+            dedication to service, we operate 24x7 to deliver products tailored precisely to your needs. Today, we
+            proudly stand as the premier private label company in the region.
+        </p>
+    </section>
+
+    <!-- How We Work Section -->
+    <section class="max-w-6xl w-full mx-auto px-4 py-10 text-center">
+        <h2 class="text-xl md:text-2xl font-bold text-[#1e3246] mb-12">How We Work</h2>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-4 lg:gap-8 justify-items-center">
+            <div *ngFor="let step of howWeWorkSteps" class="flex flex-col items-center max-w-[150px]">
+                <div
+                    class="w-16 h-16 rounded-full border-[1.5px] border-[#c69a30] flex items-center justify-center mb-4 bg-white shadow-sm hover:bg-yellow-50 transition-colors">
+                    <svg class="w-7 h-7 text-[#c69a30]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="step.icon" />
+                    </svg>
+                </div>
+                <h4 class="font-bold text-gray-800 text-sm mb-2">{{step.title}}</h4>
+                <p class="text-[10px] md:text-xs text-center text-gray-500 leading-tight">{{step.desc}}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE section -->
+    <section class="max-w-4xl w-full mx-auto px-4 py-12">
+        <h2 class="text-xl md:text-2xl font-bold text-[#1e3246] mb-8 text-center uppercase">Why Choose V-Jaya</h2>
+
+        <ul class="list-disc list-outside pl-5 text-gray-600 space-y-3 text-[13px] md:text-sm marker:text-gray-400">
+            <li *ngFor="let rson of whyChooseUs">
+                <strong class="text-gray-800">{{rson.title}}:</strong> {{rson.desc}}
+            </li>
+        </ul>
+    </section>
+
+    <!-- What Makes Us Different -->
+    <section class="max-w-4xl w-full mx-auto px-4 py-10">
+        <h2 class="text-xl md:text-2xl font-bold text-[#1e3246] mb-8 text-center">What makes us different</h2>
+
+        <div class="text-[13px] md:text-sm text-gray-600 leading-relaxed space-y-4">
+            <p>
+                What makes us different is our willingness to work with our customers as partners, where they feel that
+                they have their own factory in India. We work 24*7 to serve our customers with best products at their
+                desired price and quality. We are not the biggest manufacturer of anything but we are 100% a reliable
+                manufacturer of products you buy from us.
+            </p>
+            <p>
+                V-JAYA additionally offers <span class="underline">contract manufacturing</span> services and provides
+                product-labeling services. Our marketing and design team is invariably qualified and perpetually
+                inclined to cater custom packaging designs and ideas. Subsequently, we help you enjoy the benefits of
+                buying the superior quality products, backed by the consistent and precise standards while marketed in
+                your own branding.
+            </p>
+            <p class="italic text-gray-500">
+                The products manufactured at V-JAYA are 100% exported to over 15 countries worldwide, including UK, USA,
+                and EU Nations. We are well-armed to develop and supply customized products; nevertheless, we welcome
+                all your suggestions and invaluable guidance to further improve the quality of our products and
+                services.
+            </p>
+        </div>
+
+        <p class="text-gray-800 font-bold leading-relaxed mt-10 text-[14px] md:text-base text-left">
+            Elevate your supply chain by partnering with V-JAYA. Email us at <a
+                href="mailto:support@v-jayaindustries.com"
+                class="text-pink-600 hover:text-pink-700 transition font-medium">support@v-jayaindustries.com</a> for a
+            prompt quote and enhance your business capabilities today.
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row justify-start gap-4 mt-6">
+            <a routerLink="/contact"
+                class="bg-[#1e3246] text-white px-6 py-2.5 rounded-full shadow hover:bg-[#2c4762] transition text-sm font-medium w-max">Contact
+                Us</a>
+            <!-- WhatsApp button -->
+            <a href="http://wa.me/917017024037"
+                class="bg-[#25D366] text-white px-6 py-2.5 rounded-full shadow hover:bg-[#1ebe5d] transition text-sm font-medium flex items-center gap-2 w-max">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path
+                        d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.126.549 4.201 1.593 6.03l-1.688 6.16 6.301-1.652c1.761.944 3.737 1.442 5.825 1.442 6.646 0 12.031-5.385 12.031-12.031C24.062 5.385 18.677 0 12.031 0zm0 21.996c-1.802 0-3.565-.483-5.111-1.401l-.367-.217-3.793.995 1.015-3.696-.237-.378A9.927 9.927 0 0 1 2.035 12.03c0-5.524 4.493-10.017 10.017-10.017S22.05 6.507 22.05 12.03s-4.492 10.017-10.019 9.966zm5.498-7.501c-.302-.151-1.787-.881-2.062-.982-.276-.1-.477-.151-.678.151-.201.302-.779.982-.955 1.183-.176.201-.352.226-.653.075-.302-.151-1.275-.469-2.427-1.498-.897-.801-1.503-1.789-1.679-2.091-.176-.302-.019-.465.132-.616.136-.136.302-.352.453-.528.151-.176.201-.302.302-.503.1-.201.05-.377-.025-.528-.075-.151-.678-1.634-.93-2.237-.245-.589-.494-.509-.678-.518-.176-.008-.377-.01-.578-.01-.201 0-.528.075-.804.377-.276.302-1.055 1.03-1.055 2.512 0 1.482 1.08 2.914 1.231 3.116.151.201 2.124 3.242 5.145 4.545 2.531 1.096 2.95.88 3.428.829.477-.05 1.533-.628 1.747-1.231.214-.603.214-1.12.151-1.23-.063-.111-.264-.176-.566-.327z" />
+                </svg>
+                WhatsApp Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Factory View Gallery (Matching Screenshot) -->
+    <section class="w-full bg-[#f9fafb] py-16 text-center border-t border-gray-100 flex flex-col items-center">
+        <!-- Center Factory View Title -->
+        <div class="mb-10 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#1e3246] inline-block mb-3">Factory View</h2>
+            <div class="h-[2px] w-full bg-[#fdbd10] mx-auto rounded"></div>
+        </div>
+
+        <div class="max-w-[1400px] w-full mx-auto px-4 md:px-8">
+            <!-- 4 column tight grid, 3 rows tall just like the screenshot! -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
+                <div *ngFor="let img of factoryImages" class="bg-white overflow-hidden aspect-[4/3] rounded-sm group">
+                    <img [src]="img" alt="Factory Internal View"
+                        class="w-full h-full object-cover transform duration-500 hover:scale-105">
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

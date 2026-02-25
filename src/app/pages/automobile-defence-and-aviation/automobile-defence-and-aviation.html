@@ -1,0 +1,92 @@
+<div class="w-full bg-white flex flex-col items-center overflow-x-hidden min-h-screen font-sans">
+
+    <!-- Hero Header Background -->
+    <div class="w-full relative bg-[#1e3246] h-[250px] md:h-[350px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image overlay -->
+        <div class="absolute inset-0 mix-blend-overlay opacity-60 z-0">
+            <!-- Using the air file from earlier context -> /image/air-768x512.jpg -->
+            <img src="/image/air-768x512.jpg" alt="Automobile Defence and Aviation"
+                class="w-full h-full object-cover grayscale">
+        </div>
+
+        <!-- Text -->
+        <div class="relative z-10 text-center px-4 mt-8 md:mt-12">
+            <h1 class="text-3xl md:text-5xl font-bold text-white tracking-wide drop-shadow-md">Automobile Defence and
+                Aviation</h1>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="max-w-4xl w-full mx-auto px-4 py-16 text-center">
+        <!-- Header & Divider -->
+        <div class="mb-8 text-center">
+            <h2 class="text-2xl md:text-3xl font-semibold text-[#1e3246] inline-block mb-3">Engineering Goods for
+                Automobile Defence and Aviation</h2>
+            <div class="h-[2px] w-3/4 md:w-3/5 mx-auto bg-yellow-600"></div>
+        </div>
+
+        <p class="text-gray-600 leading-relaxed mb-6 text-sm md:text-base text-left md:text-center md:px-8">
+            At its core, V-Jaya is an engineering fabrication company offering end-to-end solutions for a wide range of
+            industries:
+        </p>
+
+        <!-- Industry Needs -->
+        <div class="text-left text-gray-600 mb-6 md:px-8 space-y-4">
+            <p *ngFor="let ind of industries">
+                <strong class="text-gray-800 font-semibold">{{ind.title}}:</strong> {{ind.desc}}
+            </p>
+        </div>
+
+        <p class="text-gray-600 leading-relaxed mb-8 text-sm md:text-base text-left md:text-center md:px-8">
+            We are dedicated to delivering precision-engineered solutions across these sectors, ensuring high-quality
+            products and reliable service.
+        </p>
+
+        <!-- Engineering capabilities List -->
+        <div class="text-left md:px-8 mb-12">
+            <h3 class="font-bold text-gray-800 mb-4">Engineering capabilities:</h3>
+            <ol
+                class="list-decimal list-outside pl-5 text-gray-600 space-y-2 text-sm md:text-base marker:text-gray-500">
+                <li *ngFor="let cap of capabilities">{{cap}}</li>
+            </ol>
+        </div>
+
+        <p
+            class="text-gray-800 font-semibold leading-relaxed mb-10 text-base md:text-lg text-left md:text-center md:px-8">
+            Elevate your supply chain by partnering with V-JAYA. Email us at <a
+                href="mailto:support@v-jayaindustries.com"
+                class="text-pink-600 hover:text-pink-700 transition font-medium">support@v-jayaindustries.com</a> for a
+            prompt quote and enhance your business capabilities today.
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row justify-start md:justify-center gap-4 md:px-8">
+            <a routerLink="/contact"
+                class="bg-[#1e3246] text-white px-6 py-2.5 rounded-full shadow hover:bg-[#2c4762] transition text-sm font-medium w-max">Contact
+                Us</a>
+            <!-- WhatsApp button logic -->
+            <a href="http://wa.me/917017024037"
+                class="bg-[#25D366] text-white px-6 py-2.5 rounded-full shadow hover:bg-[#1ebe5d] transition text-sm font-medium flex items-center gap-2 w-max">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path
+                        d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.126.549 4.201 1.593 6.03l-1.688 6.16 6.301-1.652c1.761.944 3.737 1.442 5.825 1.442 6.646 0 12.031-5.385 12.031-12.031C24.062 5.385 18.677 0 12.031 0zm0 21.996c-1.802 0-3.565-.483-5.111-1.401l-.367-.217-3.793.995 1.015-3.696-.237-.378A9.927 9.927 0 0 1 2.035 12.03c0-5.524 4.493-10.017 10.017-10.017S22.05 6.507 22.05 12.03s-4.492 10.017-10.019 9.966zm5.498-7.501c-.302-.151-1.787-.881-2.062-.982-.276-.1-.477-.151-.678.151-.201.302-.779.982-.955 1.183-.176.201-.352.226-.653.075-.302-.151-1.275-.469-2.427-1.498-.897-.801-1.503-1.789-1.679-2.091-.176-.302-.019-.465.132-.616.136-.136.302-.352.453-.528.151-.176.201-.302.302-.503.1-.201.05-.377-.025-.528-.075-.151-.678-1.634-.93-2.237-.245-.589-.494-.509-.678-.518-.176-.008-.377-.01-.578-.01-.201 0-.528.075-.804.377-.276.302-1.055 1.03-1.055 2.512 0 1.482 1.08 2.914 1.231 3.116.151.201 2.124 3.242 5.145 4.545 2.531 1.096 2.95.88 3.428.829.477-.05 1.533-.628 1.747-1.231.214-.603.214-1.12.151-1.23-.063-.111-.264-.176-.566-.327z" />
+                </svg>
+                WhatsApp Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Floating Random Masonry Grid matching Screenshot Style -->
+    <section class="max-w-6xl w-full mx-auto px-4 py-8 mb-16">
+        <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+            <div *ngFor="let img of masonryImages; let i = index"
+                class="break-inside-avoid relative overflow-hidden group rounded-sm flex items-center justify-center p-2 bg-transparent">
+                <!-- Using placeholder items that emulate the silver metallic parts seen on the real screenshot -->
+                <img [src]="'https://placehold.co/400x400/f1f5f9/1e293b?font=playfair-display&text=Aviation+Component+' + (i+1)"
+                    [class]="'w-full max-w-sm object-contain grayscale duration-500 hover:scale-[1.03] ' + img.class"
+                    alt="Defence Component">
+            </div>
+        </div>
+    </section>
+
+</div>
