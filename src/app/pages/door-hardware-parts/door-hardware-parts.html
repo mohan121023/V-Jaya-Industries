@@ -1,127 +1,96 @@
-<div class="w-full bg-white flex flex-col items-center overflow-x-hidden min-h-screen font-sans">
+<div class="w-full bg-[#f8f9fa] flex flex-col items-center overflow-x-hidden min-h-screen font-sans">
 
-    <!-- Door Hardware Banner Background (Image) -->
-    <div class="w-full relative bg-[#1e3246] h-[250px] md:h-[350px] overflow-hidden flex items-center">
-        <!-- Exact banner image spanning full width just like requested -->
-        <img src="/image/about-banner.jpg" alt="Door Hardware Banner"
-            class="absolute inset-0 w-full h-full object-cover origin-center">
+    <!-- Hero Banner Background -->
+    <div class="w-full relative h-[300px] md:h-[400px] bg-black flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <img src="/image/dorrr-768x512.jpg" alt="Door Hardware Hero Banner"
+            class="absolute inset-0 w-full h-full object-cover opacity-[0.5]">
 
-        <!-- Text container -->
-        <div class="max-w-7xl mx-auto px-4 w-full relative z-20">
-            <h1 class="text-4xl md:text-5xl font-bold text-white tracking-wide">Door Hardware Parts</h1>
+        <!-- Text -->
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-[28px] md:text-[40px] font-bold text-white tracking-wide drop-shadow-md">Door Hardware
+            </h1>
         </div>
     </div>
 
-    <!-- Intro Section -->
-    <section class="max-w-5xl w-full mx-auto px-4 py-16 text-center">
-        <h2 class="text-3xl md:text-4xl font-semibold text-[#1e3246] mb-4">Work with our top-tier private label factory
-            specializing in hardware products.</h2>
-        <div class="w-24 h-1 bg-yellow-500 mx-auto mb-8 rounded-full"></div>
-
-        <p class="text-gray-600 leading-relaxed mb-6 text-sm md:text-base text-justify md:text-center">
-            We excel in crafting hardware to your precise requirements, offering an extensive selection of finishes and
-            customizable packaging solutions. Whether you need sleek modern designs or durable traditional styles, we
-            ensure your products are manufactured with precision and delivered to exceed your expectations.
-        </p>
-    </section>
-
-    <!-- How We Work Section -->
-    <section class="max-w-6xl w-full mx-auto px-4 py-10 text-center">
-        <h2 class="text-3xl font-medium text-[#1e3246] mb-12">How We Work</h2>
-
+    <div class="w-full px-4 md:px-8 py-8 md:py-12 flex justify-center">
+        <!-- Main Content Card -->
         <div
-            class="grid grid-cols-2 md:grid-cols-3 md:flex md:flex-row md:flex-nowrap justify-between gap-6 overflow-x-auto text-center px-4 md:px-0">
-            <div *ngFor="let step of howWeWorkSteps; let i = index"
-                class="flex flex-col items-center flex-1 min-w-[150px]">
-                <div
-                    class="w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-yellow-500 flex items-center justify-center text-yellow-500 mb-4 shadow-sm relative bg-white">
-                    <svg class="w-8 h-8 md:w-10 md:h-10 outline-none stroke-current" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" [attr.d]="step.icon">
-                        </path>
-                    </svg>
-                </div>
-                <h3 class="font-bold text-gray-800 mb-2">{{step.title}}</h3>
-                <p class="text-xs md:text-sm text-gray-500 px-2 leading-tight">
-                    {{step.desc}}
+            class="max-w-[1100px] w-full bg-white border border-gray-200 rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.05)] p-6 md:p-12">
+
+            <!-- Header & Intro -->
+            <div class="text-center mb-8">
+                <h2 class="text-3xl md:text-[36px] font-bold text-black mb-6">Door Hardware</h2>
+                <p
+                    class="text-[#ca9c56] font-medium leading-relaxed max-w-4xl mx-auto text-[15px] md:text-[17px] text-justify md:text-center">
+                    Work with our top-tier private label factory specializing in hardware products. We excel in crafting
+                    hardware to your precise requirements, offering an extensive selection of finishes and customizable
+                    packaging solutions. Whether you need sleek modern designs or durable traditional styles, we ensure
+                    your products are manufactured with precision and delivered to exceed your expectations.
                 </p>
             </div>
-        </div>
-    </section>
 
-    <!-- Why Choose V-Jaya / Features Section -->
-    <section class="flex flex-col md:flex-row gap-8 max-w-6xl w-full mx-auto px-4 py-12">
-        <div class="w-full md:w-1/2">
-            <h2 class="text-2xl font-semibold text-[#1e3246] mb-6 border-b pb-2">Packaging options include:</h2>
-            <ul class="list-disc list-outside text-gray-600 space-y-3 pl-5 marker:text-gray-400">
-                <li *ngFor="let option of packagingOptions">
-                    <span class="text-sm md:text-base text-gray-500 font-medium">{{option}}</span>
-                </li>
-            </ul>
-        </div>
-
-        <div class="w-full md:w-1/2">
-            <h2 class="text-2xl font-semibold text-[#1e3246] mb-6 border-b pb-2">Finish:</h2>
-            <ul class="list-disc list-outside text-gray-600 space-y-3 pl-5 marker:text-gray-400">
-                <li *ngFor="let finish of finishOptions">
-                    <span class="text-sm md:text-base text-gray-500 font-medium">{{finish}}</span>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Call to action -->
-    <section class="max-w-4xl w-full mx-auto px-4 py-4 mb-4">
-        <div class="text-center text-gray-800 font-semibold text-lg md:text-xl md:px-12 leading-relaxed">
-            Elevate your supply chain by partnering with V-JAYA. Email us at <a
-                href="mailto:support@v-jayaindustries.com"
-                class="text-pink-600 hover:text-pink-700 transition">support@v-jayaindustries.com</a> for a prompt quote
-            and enhance your business capabilities today.
-        </div>
-
-        <div class="mt-8 flex justify-center gap-4">
-            <a routerLink="/contact"
-                class="bg-[#1e3246] text-white px-6 py-2.5 rounded-full shadow hover:bg-[#2c4762] transition text-sm font-medium">Contact
-                Us</a>
-            <a href="http://wa.me/917017024037"
-                class="bg-[#25D366] text-white px-6 py-2.5 rounded-full shadow hover:bg-[#1ebe5d] transition text-sm font-medium flex items-center gap-2">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                    <path
-                        d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.126.549 4.201 1.593 6.03l-1.688 6.16 6.301-1.652c1.761.944 3.737 1.442 5.825 1.442 6.646 0 12.031-5.385 12.031-12.031C24.062 5.385 18.677 0 12.031 0zm0 21.996c-1.802 0-3.565-.483-5.111-1.401l-.367-.217-3.793.995 1.015-3.696-.237-.378A9.927 9.927 0 0 1 2.035 12.03c0-5.524 4.493-10.017 10.017-10.017S22.05 6.507 22.05 12.03s-4.492 10.017-10.019 9.966zm5.498-7.501c-.302-.151-1.787-.881-2.062-.982-.276-.1-.477-.151-.678.151-.201.302-.779.982-.955 1.183-.176.201-.352.226-.653.075-.302-.151-1.275-.469-2.427-1.498-.897-.801-1.503-1.789-1.679-2.091-.176-.302-.019-.465.132-.616.136-.136.302-.352.453-.528.151-.176.201-.302.302-.503.1-.201.05-.377-.025-.528-.075-.151-.678-1.634-.93-2.237-.245-.589-.494-.509-.678-.518-.176-.008-.377-.01-.578-.01-.201 0-.528.075-.804.377-.276.302-1.055 1.03-1.055 2.512 0 1.482 1.08 2.914 1.231 3.116.151.201 2.124 3.242 5.145 4.545 2.531 1.096 2.95.88 3.428.829.477-.05 1.533-.628 1.747-1.231.214-.603.214-1.12.151-1.23-.063-.111-.264-.176-.566-.327z" />
-                </svg>
-                WhatsApp Now
-            </a>
-        </div>
-    </section>
-
-    <!-- Main Grid Cards Section -->
-    <section class="max-w-[1400px] w-full mx-auto px-4 py-16 border-t border-gray-50 mt-4">
-
-        <!-- Flex wrap container with responsive clean gap structure -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
-
-            <div *ngFor="let card of hardwareCards" class="w-full flex flex-col items-center text-center">
-
-                <!-- Card Image Box - Full width of column, no borders, no paddings -->
-                <div class="w-full aspect-[16/10] mb-5 overflow-hidden flex items-center justify-center bg-gray-50">
-                    <img [src]="card.image" [alt]="card.title" class="w-full h-full object-cover">
+            <!-- Options Lists -->
+            <div class="flex flex-col items-center w-full max-w-md mx-auto mb-10 text-left">
+                <div class="w-full mb-6">
+                    <h3 class="text-gray-800 text-[15px] font-semibold mb-2">Packaging options include:</h3>
+                    <ul class="list-disc pl-8 space-y-1">
+                        <li *ngFor="let option of packagingOptions" class="text-gray-500 text-[14px]">
+                            {{option}}
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Title -->
-                <h3 class="text-[#152e41] font-medium text-[16px] md:text-[17.5px] leading-snug px-2 mb-6 max-w-[90%]">
-                    {{card.title}}
-                </h3>
+                <div class="w-full">
+                    <h3 class="text-gray-800 text-[15px] font-semibold mb-2">Finish:</h3>
+                    <ul class="list-disc pl-8 space-y-1">
+                        <li *ngFor="let finish of finishOptions" class="text-gray-500 text-[14px]">
+                            {{finish}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-                <!-- Call to action button box -->
-                <a [href]="card.link"
-                    class="bg-[#1e3246] text-[#e8eaec] px-10 py-[10px] hover:bg-[#2c4762] transition-colors text-[14px] font-medium tracking-wide mt-auto shadow-sm">
-                    Learn more
+            <!-- Call to Action Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-16">
+                <a href="javascript:void(0)"
+                    class="bg-[#1e3246] text-white px-6 py-[10px] rounded hover:bg-[#2c4762] transition text-[14px] font-medium shadow-sm flex items-center justify-center min-w-[180px]">
+                    Download Our Catalog
                 </a>
+                <a href="http://wa.me/917017024037"
+                    class="bg-[#61ce70] text-white px-6 py-[10px] rounded hover:bg-[#4eb35b] transition text-[14px] font-medium shadow-sm flex items-center justify-center gap-2 min-w-[180px]">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.126.549 4.201 1.593 6.03l-1.688 6.16 6.301-1.652c1.761.944 3.737 1.442 5.825 1.442 6.646 0 12.031-5.385 12.031-12.031C24.062 5.385 18.677 0 12.031 0zm0 21.996c-1.802 0-3.565-.483-5.111-1.401l-.367-.217-3.793.995 1.015-3.696-.237-.378A9.927 9.927 0 0 1 2.035 12.03c0-5.524 4.493-10.017 10.017-10.017S22.05 6.507 22.05 12.03s-4.492 10.017-10.019 9.966zm5.498-7.501c-.302-.151-1.787-.881-2.062-.982-.276-.1-.477-.151-.678.151-.201.302-.779.982-.955 1.183-.176.201-.352.226-.653.075-.302-.151-1.275-.469-2.427-1.498-.897-.801-1.503-1.789-1.679-2.091-.176-.302-.019-.465.132-.616.136-.136.302-.352.453-.528.151-.176.201-.302.302-.503.1-.201.05-.377-.025-.528-.075-.151-.678-1.634-.93-2.237-.245-.589-.494-.509-.678-.518-.176-.008-.377-.01-.578-.01-.201 0-.528.075-.804.377-.276.302-1.055 1.03-1.055 2.512 0 1.482 1.08 2.914 1.231 3.116.151.201 2.124 3.242 5.145 4.545 2.531 1.096 2.95.88 3.428.829.477-.05 1.533-.628 1.747-1.231.214-.603.214-1.12.151-1.23-.063-.111-.264-.176-.566-.327z" />
+                    </svg>
+                    WhatsApp Now
+                </a>
+            </div>
 
+            <!-- Grid of Products -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 w-full px-2 md:px-0">
+                <div *ngFor="let card of hardwareCards" class="flex flex-col items-center text-center group w-full">
+
+                    <!-- Image Card -->
+                    <div
+                        class="w-full aspect-[4/3] md:aspect-[5/4] mb-4 overflow-hidden rounded-[4px] flex items-center justify-center p-1 bg-white">
+                        <img [src]="card.image" [alt]="card.title" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Title -->
+                    <h3
+                        class="text-[#000] font-semibold text-[13px] md:text-[14px] leading-snug px-1 mb-3 min-h-[40px] flex items-center justify-center break-words max-w-full">
+                        {{card.title}}
+                    </h3>
+
+                    <!-- Button -->
+                    <a [href]="card.link"
+                        class="bg-[#1e3246] text-[#fff] px-8 py-[8px] rounded hover:bg-[#2c4762] transition-colors text-[13px] font-medium shadow-sm w-max">
+                        Learn more
+                    </a>
+                </div>
             </div>
 
         </div>
-
-    </section>
-
+    </div>
 </div>

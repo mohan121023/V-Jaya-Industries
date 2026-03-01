@@ -33,13 +33,12 @@ export class AutomobileDefenceAndAviation {
   ];
 
   masonryImages = [
-    { src: 'https://v-jayaindustries.com/wp-content/uploads/2024/07/auto1.jpg', class: 'h-48 md:h-56' },
-    { src: 'https://v-jayaindustries.com/wp-content/uploads/2024/07/auto2.jpg', class: 'h-64' },
-    { src: 'https://v-jayaindustries.com/wp-content/uploads/2024/07/auto3.jpg', class: 'h-56' },
-    { src: 'https://v-jayaindustries.com/wp-content/uploads/2024/07/auto4.jpg', class: 'h-48' },
-    { src: 'https://v-jayaindustries.com/wp-content/uploads/2024/07/auto5.jpg', class: 'h-72' },
-    { src: 'https://v-jayaindustries.com/wp-content/uploads/2024/07/auto7.jpg', class: 'h-56 md:h-64' },
-    { src: 'https://v-jayaindustries.com/wp-content/uploads/2024/07/auto8.jpg', class: 'h-64' },
-    { src: 'https://v-jayaindustries.com/wp-content/uploads/2024/07/auto6.jpg', class: 'h-48 md:h-56' }
+    { src: '/image/Automobile Defence and Aviation/Automobile Defence and Aviation (1).webp' },
+    { src: '/image/Automobile Defence and Aviation/Automobile Defence and Aviation (2).webp' },
+    { src: '/image/Automobile Defence and Aviation/Automobile Defence and Aviation (3).webp' },
+    { src: '/image/Automobile Defence and Aviation/Automobile Defence and Aviation (4).jpg' },
+    { src: '/image/Automobile Defence and Aviation/Automobile Defence and Aviation (5).jpg' },
+    { src: '/image/Automobile Defence and Aviation/Automobile Defence and Aviation (6).jpg' },
+    { src: '/image/Automobile Defence and Aviation/Automobile Defence and Aviation (7).jpg' }
   ];
 }

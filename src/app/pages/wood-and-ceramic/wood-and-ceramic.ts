@@ -19,14 +19,21 @@ export class WoodAndCeramic {
   ];
 
   masonryImages = [
-    { src: 'https://v-jayaindustries.com/wp-content/uploads/2024/07/51BQtCUewsL._AC_SL1500_.jpg', class: 'h-64' },
-    { src: 'https://v-jayaindustries.com/wp-content/uploads/2024/07/woode-768x512.jpg', class: 'h-80' },
-    { src: 'https://v-jayaindustries.com/wp-content/uploads/2024/07/71mDBiHj-qL._AC_UF8941000_QL80_-1.jpg', class: 'h-56' },
-    { src: 'https://v-jayaindustries.com/wp-content/uploads/2024/07/wood2.jpg', class: 'h-48' },
-    { src: 'https://v-jayaindustries.com/wp-content/uploads/2024/07/wood3.jpg', class: 'h-72' },
-    { src: 'https://v-jayaindustries.com/wp-content/uploads/2024/07/wood4.jpg', class: 'h-64' },
-    { src: 'https://v-jayaindustries.com/wp-content/uploads/2024/07/wood5.jpg', class: 'h-56' },
-    { src: 'https://v-jayaindustries.com/wp-content/uploads/2024/07/wood6.jpg', class: 'h-40' },
-    { src: 'https://v-jayaindustries.com/wp-content/uploads/2024/07/wood7.jpg', class: 'h-64' }
+    { src: '/image/wood and ceramic/wood and ceramic (1).jpg', class: '' },
+    { src: '/image/wood and ceramic/wood and ceramic (2).jpeg', class: '' },
+    { src: '/image/wood and ceramic/wood and ceramic (2).jpg', class: '' },
+    { src: '/image/wood and ceramic/wood and ceramic (3).jpeg', class: '' },
+    { src: '/image/wood and ceramic/wood and ceramic (3).jpg', class: '' },
+    { src: '/image/wood and ceramic/wood and ceramic (4).jpeg', class: '' },
+    { src: '/image/wood and ceramic/wood and ceramic (4).jpg', class: '' },
+    { src: '/image/wood and ceramic/wood and ceramic (5).jpeg', class: '' },
+    { src: '/image/wood and ceramic/wood and ceramic (5).jpg', class: '' },
+    { src: '/image/wood and ceramic/wood and ceramic (6).jpg', class: '' },
+    { src: '/image/wood and ceramic/wood and ceramic (7).jpg', class: '' },
+    { src: '/image/wood and ceramic/wood and ceramic (8).jpg', class: '' },
+    { src: '/image/wood and ceramic/wood and ceramic (9).jpg', class: '' },
+    { src: '/image/wood and ceramic/wood and ceramic (10).jpg', class: '' },
+    { src: '/image/wood and ceramic/wood and ceramic (11).jpg', class: '' },
+    { src: '/image/wood and ceramic/wood and ceramic (1).jpeg', class: '' }
   ];
 }

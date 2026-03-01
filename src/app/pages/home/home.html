@@ -1,7 +1,7 @@
 <div class="w-full bg-gray-50 flex flex-col items-center overflow-x-hidden min-h-screen font-sans">
 
     <!-- Hero / Carousel Section -->
-    <section class="max-w-7xl w-full mx-auto px-4 py-8 mt-4">
+    <section class="w-full py-8">
         <div class="exp-wrapper">
             <div class="ue_options uc-items-wrapper">
 
@@ -29,24 +29,23 @@
     </section>
 
     <!-- Industry We Serve Section -->
-    <section class="max-w-7xl w-full mx-auto px-4 py-16 text-center">
-        <h2 class="text-4xl font-extrabold text-slate-800 mb-4 tracking-tight">Industry We Serve & Services We Offer
-        </h2>
-        <div class="w-24 h-1 bg-yellow-500 mx-auto mb-16 rounded-full"></div>
+    <section class="max-w-[1240px] w-full mx-auto px-4 py-12 text-center">
+        <h2 class="text-[36px] font-bold text-[#1a3449] mb-4">Industry We Serve & Services We Offer</h2>
+        <div class="w-full h-[2px] bg-[#c69a30] mb-12"></div>
 
-        <div class="flex flex-col gap-8">
+        <div class="flex flex-col gap-6">
             <!-- Row 1 -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div *ngFor="let card of servicesRow1"
-                    class="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:-translate-y-1">
-                    <div class="h-48 overflow-hidden bg-gray-100 p-6 flex items-center justify-center">
-                        <img [src]="card.image" alt="{{card.title}}"
-                            class="max-h-full max-w-full object-contain mix-blend-multiply transition-transform duration-500 hover:scale-110">
+                    class="bg-white border border-gray-100/0 hover:border-gray-300 hover:shadow-[0_4px_25px_rgba(0,0,0,0.1)] flex flex-col items-center p-6 transition-all duration-300">
+                    <div class="h-[180px] w-full mb-6 flex items-center justify-center">
+                        <img [src]="card.image" alt="{{card.title}}" class="max-h-full max-w-full object-contain">
                     </div>
-                    <div class="p-6 flex flex-col flex-grow items-center justify-between">
-                        <h3 class="text-lg font-bold text-gray-800 mb-6">{{card.title}}</h3>
-                        <button [routerLink]="card.link"
-                            class="bg-[#1e3246] hover:bg-[#2c4762] text-white text-sm font-medium py-2.5 px-6 rounded transition-colors duration-200 w-3/4 shadow-sm">
+                    <div class="flex flex-col items-center justify-end w-full mt-auto">
+                        <h3 class="text-[16px] font-bold text-[#1E373E] mb-4 text-center">{{card.title}}</h3>
+                        <button
+                            class="bg-[#1E373E] hover:bg-[#CC9933] text-white text-[13px] font-medium py-2.5 px-6 transition-colors duration-300"
+                            [routerLink]="card.link">
                             Learn more
                         </button>
                     </div>
@@ -54,17 +53,17 @@
             </div>
 
             <!-- Row 2 -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center mt-4">
+            <div class="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-6">
                 <div *ngFor="let card of servicesRow2"
-                    class="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:-translate-y-1">
-                    <div class="h-48 overflow-hidden bg-gray-100 p-6 flex items-center justify-center">
-                        <img [src]="card.image" alt="{{card.title}}"
-                            class="max-h-full max-w-full object-contain mix-blend-multiply transition-transform duration-500 hover:scale-110">
+                    class="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] bg-white border border-gray-100/0 hover:border-gray-300 hover:shadow-[0_4px_25px_rgba(0,0,0,0.1)] flex flex-col items-center p-6 transition-all duration-300">
+                    <div class="h-[180px] w-full mb-6 flex items-center justify-center">
+                        <img [src]="card.image" alt="{{card.title}}" class="max-h-full max-w-full object-contain">
                     </div>
-                    <div class="p-6 flex flex-col flex-grow items-center justify-between">
-                        <h3 class="text-lg font-bold text-gray-800 mb-6">{{card.title}}</h3>
-                        <button [routerLink]="card.link"
-                            class="bg-[#1e3246] hover:bg-[#2c4762] text-white text-sm font-medium py-2.5 px-6 rounded transition-colors duration-200 w-3/4 shadow-sm">
+                    <div class="flex flex-col items-center justify-end w-full mt-auto">
+                        <h3 class="text-[16px] font-bold text-[#1E373E] mb-4 text-center">{{card.title}}</h3>
+                        <button
+                            class="bg-[#1E373E] hover:bg-[#CC9933] text-white text-[13px] font-medium py-2.5 px-6 transition-colors duration-300"
+                            [routerLink]="card.link">
                             Learn more
                         </button>
                     </div>
@@ -95,35 +94,59 @@
 
             <!-- Right Form -->
             <div class="w-full md:w-1/2 flex flex-col justify-center">
-                <form class="space-y-6">
+                <form class="space-y-6" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                    <!-- Name -->
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Name <span
                                 class="text-red-500">*</span></label>
-                        <input type="text" placeholder="Name"
-                            class="w-full px-4 py-3 rounded-md border border-gray-200 bg-gray-50 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-800">
+                        <input type="text" formControlName="name" placeholder="Name"
+                            class="w-full px-4 py-3 rounded-md border bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 transition-all text-gray-800"
+                            [ngClass]="{'border-red-500 focus:border-red-500 focus:ring-red-200': contactForm.get('name')?.invalid && contactForm.get('name')?.touched, 'border-gray-200 focus:border-blue-500 focus:ring-blue-200': !(contactForm.get('name')?.invalid && contactForm.get('name')?.touched)}">
+                        <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"
+                            class="text-red-500 text-[11px] mt-1 text-left">Name is required.</div>
                     </div>
 
+                    <!-- Mobile Number -->
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Mobile Number <span
                                 class="text-red-500">*</span></label>
-                        <input type="tel" placeholder="Mobile Number"
-                            class="w-full px-4 py-3 rounded-md border border-gray-200 bg-gray-50 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-800">
+                        <input type="tel" formControlName="mobileNumber" placeholder="Mobile Number"
+                            class="w-full px-4 py-3 rounded-md border bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 transition-all text-gray-800"
+                            [ngClass]="{'border-red-500 focus:border-red-500 focus:ring-red-200': contactForm.get('mobileNumber')?.invalid && contactForm.get('mobileNumber')?.touched, 'border-gray-200 focus:border-blue-500 focus:ring-blue-200': !(contactForm.get('mobileNumber')?.invalid && contactForm.get('mobileNumber')?.touched)}">
+                        <div *ngIf="contactForm.get('mobileNumber')?.hasError('required') && contactForm.get('mobileNumber')?.touched"
+                            class="text-red-500 text-[11px] mt-1 text-left">Mobile Number is required.</div>
+                        <div *ngIf="contactForm.get('mobileNumber')?.hasError('pattern') && contactForm.get('mobileNumber')?.touched"
+                            class="text-red-500 text-[11px] mt-1 text-left">Invalid Mobile Number (Numbers only).</div>
                     </div>
 
+                    <!-- Email -->
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                        <input type="email" placeholder="Email"
-                            class="w-full px-4 py-3 rounded-md border border-gray-200 bg-gray-50 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-800">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email <span
+                                class="text-red-500">*</span></label>
+                        <input type="email" formControlName="email" placeholder="Email"
+                            class="w-full px-4 py-3 rounded-md border bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 transition-all text-gray-800"
+                            [ngClass]="{'border-red-500 focus:border-red-500 focus:ring-red-200': contactForm.get('email')?.invalid && contactForm.get('email')?.touched, 'border-gray-200 focus:border-blue-500 focus:ring-blue-200': !(contactForm.get('email')?.invalid && contactForm.get('email')?.touched)}">
+                        <div *ngIf="contactForm.get('email')?.hasError('required') && contactForm.get('email')?.touched"
+                            class="text-red-500 text-[11px] mt-1 text-left">Email is required.</div>
+                        <div *ngIf="contactForm.get('email')?.hasError('email') && contactForm.get('email')?.touched"
+                            class="text-red-500 text-[11px] mt-1 text-left">Invalid Email.</div>
                     </div>
 
+                    <!-- Message -->
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                        <textarea rows="4" placeholder="Message"
-                            class="w-full px-4 py-3 rounded-md border border-gray-200 bg-gray-50 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-800 resize-none"></textarea>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Message <span
+                                class="text-red-500">*</span></label>
+                        <textarea formControlName="message" rows="4" placeholder="Message"
+                            class="w-full px-4 py-3 rounded-md border bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 transition-all text-gray-800 resize-none"
+                            [ngClass]="{'border-red-500 focus:border-red-500 focus:ring-red-200': contactForm.get('message')?.invalid && contactForm.get('message')?.touched, 'border-gray-200 focus:border-blue-500 focus:ring-blue-200': !(contactForm.get('message')?.invalid && contactForm.get('message')?.touched)}"></textarea>
+                        <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
+                            class="text-red-500 text-[11px] mt-1 text-left">Message is required.</div>
                     </div>
 
-                    <button type="button"
-                        class="w-full bg-[#1e3246] hover:bg-[#2c4762] text-white font-semibold py-3.5 px-6 rounded-md shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5">
+                    <!-- Submit Button -->
+                    <button type="submit"
+                        class="w-full text-white font-semibold py-3.5 px-6 rounded-md shadow-lg transition-all duration-300 transform"
+                        [ngClass]="contactForm.valid ? 'bg-[#1e3246] hover:bg-[#2c4762] hover:-translate-y-0.5 hover:shadow-xl' : 'bg-[#40566A] opacity-80 cursor-not-allowed'">
                         Send
                     </button>
                 </form>

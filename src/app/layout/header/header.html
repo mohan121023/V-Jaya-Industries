@@ -5,7 +5,7 @@
             <!-- Logo -->
             <div class="flex-shrink-0 flex items-center">
                 <a routerLink="/" class="text-3xl font-bold tracking-tight">
-                    <span class="text-blue-500">V-Jaya</span>
+                    <span class="text-[#5ca3ba]">V-Jaya</span>
                     <span class="text-gray-800 ml-2">Industries</span>
                 </a>
             </div>
@@ -28,7 +28,7 @@
                         class="absolute w-[300px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 left-0 top-full border border-gray-100 shadow-xl">
                         <div class="bg-white flex flex-col w-full text-sm">
                             <a routerLink="/die-casting"
-                                class="px-6 py-4 bg-[#1e3246] text-white font-semibold hover:bg-[#2c4762] transition-colors block">Die
+                                class="px-6 py-4 text-[#00374e] bg-white font-semibold hover:bg-[#1e3246] hover:text-white transition-colors border-b border-gray-50 block">Die
                                 Casting</a>
                             <a routerLink="/door-hardware"
                                 class="px-6 py-4 text-[#00374e] bg-white font-semibold hover:bg-[#1e3246] hover:text-white transition-colors border-b border-gray-50 block">Door
@@ -68,7 +68,81 @@
                     WhatsApp Now
                 </a>
             </div>
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+                <button (click)="toggleMobileMenu()" class="text-gray-700 hover:text-[#5ca3ba] focus:outline-none p-2">
+                    <svg *ngIf="!isMobileMenuOpen" class="w-7 h-7" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg *ngIf="isMobileMenuOpen" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
 
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="md:hidden transition-all duration-300 overflow-hidden bg-white shadow-inner border-t border-gray-100"
+        [ngClass]="{'max-h-[500px] opacity-100 py-4': isMobileMenuOpen, 'max-h-0 opacity-0 py-0': !isMobileMenuOpen}">
+        <div class="px-4 flex flex-col space-y-4 text-sm font-semibold text-gray-700">
+            <a routerLink="/" (click)="toggleMobileMenu()"
+                class="hover:text-yellow-600 block transition-colors">Home</a>
+            <a routerLink="/about" (click)="toggleMobileMenu()"
+                class="hover:text-yellow-600 block transition-colors">About Us</a>
+
+            <!-- Mobile Dropdown -->
+            <div>
+                <button (click)="toggleMobileDropdown()"
+                    class="flex items-center justify-between w-full hover:text-yellow-600 transition-colors">
+                    What We Do
+                    <svg class="w-4 h-4 transition-transform duration-300"
+                        [ngClass]="{'rotate-180': isMobileDropdownOpen}" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="flex flex-col pl-4 mt-3 space-y-3 overflow-hidden transition-all duration-300"
+                    [ngClass]="{'max-h-[500px] opacity-100': isMobileDropdownOpen, 'max-h-0 opacity-0': !isMobileDropdownOpen}">
+                    <a routerLink="/die-casting" (click)="toggleMobileMenu()"
+                        class="text-[#00374e] hover:text-yellow-600 border-b border-gray-100 pb-2">Die Casting</a>
+                    <a routerLink="/door-hardware" (click)="toggleMobileMenu()"
+                        class="text-[#00374e] hover:text-yellow-600 border-b border-gray-100 pb-2">Door Hardware
+                        Parts</a>
+                    <a routerLink="/steel-fabrication" (click)="toggleMobileMenu()"
+                        class="text-[#00374e] hover:text-yellow-600 border-b border-gray-100 pb-2">Steel Fabrication</a>
+                    <a routerLink="/wood-and-ceramic" (click)="toggleMobileMenu()"
+                        class="text-[#00374e] hover:text-yellow-600 border-b border-gray-100 pb-2">Wood and Ceramic</a>
+                    <a routerLink="/plastic-and-rubber-moulding" (click)="toggleMobileMenu()"
+                        class="text-[#00374e] hover:text-yellow-600 border-b border-gray-100 pb-2">Plastic and Rubber
+                        moulding</a>
+                    <a routerLink="/automobile-defence-and-aviation" (click)="toggleMobileMenu()"
+                        class="text-[#00374e] hover:text-yellow-600 border-b border-gray-100 pb-2">Automobile Defence
+                        and Aviation</a>
+                    <a routerLink="/private-lable-packing" (click)="toggleMobileMenu()"
+                        class="text-[#00374e] hover:text-yellow-600">Private Lable Packing</a>
+                </div>
+            </div>
+
+            <a routerLink="/factory-view" (click)="toggleMobileMenu()"
+                class="hover:text-yellow-600 block transition-colors">Factory View</a>
+            <a routerLink="/contact" (click)="toggleMobileMenu()"
+                class="hover:text-yellow-600 block transition-colors">Contact Us</a>
+
+            <div class="pt-4 border-t border-gray-100">
+                <a href="https://wa.me/1234567890" target="_blank"
+                    class="bg-green-500 hover:bg-green-600 text-white px-5 py-2.5 rounded-full font-medium flex items-center justify-center transition-colors duration-300 shadow-md">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                    </svg>
+                    WhatsApp Now
+                </a>
+            </div>
         </div>
     </div>
 </header>

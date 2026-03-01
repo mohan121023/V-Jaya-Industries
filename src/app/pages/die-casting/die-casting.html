@@ -1,109 +1,132 @@
-<div class="w-full bg-white flex flex-col items-center overflow-x-hidden min-h-screen font-sans">
+<div class="w-full bg-white flex flex-col items-center overflow-x-hidden min-h-screen text-[#333] font-sans">
 
     <!-- Hero Banner Background -->
-    <div class="w-full relative h-[250px] md:h-[350px] bg-black flex items-center justify-center overflow-hidden">
+    <div class="w-full relative h-[300px] md:h-[400px] bg-black flex items-center justify-center overflow-hidden">
         <!-- Background Image overlay -->
-        <img src="/image/dia-casting/deiii-scaled.jpg" alt="Die Casting Hero Banner"
-            class="absolute inset-0 w-full h-full object-cover opacity-60">
+        <img src="/image/dia-casting/banner-deiii.jpg" alt="Die Casting Hero Banner"
+            class="absolute inset-0 w-full h-full object-cover opacity-[0.5]">
 
         <!-- Text -->
         <div class="relative z-10 text-center px-4">
-            <h1 class="text-2xl md:text-4xl font-semibold text-white tracking-wide">Work With Best Die Casting Company
-            </h1>
+            <h1 class="text-[28px] md:text-[40px] font-bold text-white tracking-wide drop-shadow-md">Work With Best Die
+                Casting Company</h1>
         </div>
     </div>
 
     <!-- Intro Section: Choose the Best -->
-    <section class="max-w-6xl w-full mx-auto px-4 py-16 text-center">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#1e3246] mb-3">Choose the best Die Casting Company for your next
+    <section class="max-w-6xl w-full mx-auto px-4 py-12 md:py-20 text-center">
+        <h2 class="text-2xl md:text-[32px] font-bold text-black mb-4">Choose the best Die Casting Company for your next
             project.</h2>
-        <p class="text-gray-600 font-medium mb-12 text-sm md:text-base">Our in-house R&D team excels in crafting
-            precise, cutting-edge tooling for your projects.</p>
+        <p class="text-gray-700 font-medium mb-12 md:mb-16 text-sm md:text-base">Our in-house R&D team excels in
+            crafting precise, cutting-edge tooling for your projects.</p>
 
         <!-- 4 Distinct product images layout -->
-        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 lg:gap-24">
+        <div class="flex flex-wrap justify-center items-center gap-6 md:gap-12 lg:gap-20">
             <div *ngFor="let img of bestProducts" class="flex justify-center items-center">
-                <img [src]="img" class="h-16 md:h-24 object-contain brightness-95" alt="Hardware Component">
+                <img [src]="img"
+                    class="h-20 md:h-32 lg:h-40 xl:h-48 object-contain hover:scale-105 transition-transform duration-300"
+                    alt="Die Casting Component">
             </div>
         </div>
     </section>
 
     <!-- Metals we cast Section -->
-    <section class="max-w-5xl w-full mx-auto px-4 py-10 text-center">
-        <div class="inline-block mb-10 border-b-[1.5px] border-gray-800 pb-2 px-2">
-            <h2 class="text-xl md:text-2xl font-bold text-gray-900">Metals we cast</h2>
+    <section class="max-w-5xl w-full mx-auto px-4 py-8 md:py-12 text-center flex flex-col items-center">
+        <div class="flex flex-col items-center mb-10 md:mb-12">
+            <h2 class="text-[22px] md:text-[28px] font-bold text-black mb-2">Metals we cast</h2>
+            <div class="w-full h-[2px] bg-black max-w-[180px]"></div>
         </div>
 
         <div class="flex flex-wrap justify-center gap-8 md:gap-12 lg:gap-16 items-start">
-            <div *ngFor="let metal of metalsWeCast" class="flex flex-col items-center max-w-[140px]">
-                <div class="h-20 w-full flex items-center justify-center mb-4">
-                    <img [src]="metal.image" class="max-h-full max-w-full object-contain" [alt]="metal.title">
+            <div *ngFor="let metal of metalsWeCast" class="flex flex-col items-center max-w-[160px]">
+                <div
+                    class="w-full min-h-[120px] md:min-h-[160px] flex items-center justify-center mb-4 md:mb-6 overflow-hidden">
+                    <img [src]="metal.image"
+                        class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
+                        [alt]="metal.title">
                 </div>
-                <span
-                    class="text-xs font-bold text-gray-700 tracking-wider text-center break-words">{{metal.title}}</span>
+                <h3 class="text-sm md:text-base font-bold text-black uppercase tracking-wide text-center">
+                    {{metal.title}}</h3>
             </div>
         </div>
     </section>
 
     <!-- Methods we use Section -->
-    <section class="max-w-6xl w-full mx-auto px-4 py-10 text-center">
-        <div class="inline-block mb-10 border-b-[1.5px] border-gray-800 pb-2 px-2">
-            <h2 class="text-xl md:text-2xl font-bold text-gray-900">Methods we use</h2>
+    <section class="max-w-6xl w-full mx-auto px-4 py-8 md:py-12 text-center flex flex-col items-center">
+        <div class="flex flex-col items-center mb-10 md:mb-12">
+            <h2 class="text-[22px] md:text-[28px] font-bold text-black mb-2">Methods we use</h2>
+            <div class="w-full h-[2px] bg-black max-w-[180px]"></div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
-            <div *ngFor="let method of methodsWeUse" class="flex flex-col items-center">
-                <div
-                    class="w-full aspect-video bg-gray-50 flex items-center justify-center mb-4 overflow-hidden shadow-sm">
-                    <img [src]="method.image" class="w-full h-full object-cover" [alt]="method.title">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
+            <div *ngFor="let method of methodsWeUse" class="flex flex-col items-center group">
+                <div class="w-full overflow-hidden mb-4 md:mb-6 rounded-sm">
+                    <img [src]="method.image"
+                        class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
+                        [alt]="method.title">
                 </div>
-                <span class="text-sm text-gray-800 font-medium">{{method.title}}</span>
+                <h3 class="text-lg md:text-xl font-bold text-black">{{method.title}}</h3>
             </div>
         </div>
     </section>
 
     <!-- Die casting equipments Section -->
-    <section class="max-w-4xl w-full mx-auto px-4 py-12 text-center">
-        <div class="inline-block mb-10 border-b-[1.5px] border-gray-800 pb-2 px-6">
-            <h2 class="text-xl md:text-2xl font-bold text-gray-900">Die casting equipemnts</h2>
+    <section class="max-w-4xl w-full mx-auto px-4 py-12 md:py-16 flex flex-col items-center">
+        <!-- Title & Divider -->
+        <div class="flex flex-col items-center mb-10 md:mb-16 w-full">
+            <h2 class="text-[28px] md:text-[35px] font-semibold text-black mb-[18px]">Die casting equipemnts</h2>
+            <div class="h-[3px] bg-black w-[80%] max-w-[430px]"></div>
         </div>
 
-        <div class="text-left mx-auto max-w-lg text-gray-700 text-sm md:text-base leading-relaxed space-y-3">
-            <div *ngFor="let eq of equipments" class="flex items-start gap-3">
-                <span class="text-yellow-600 font-bold mt-1 text-[10px] md:text-xs">▶</span>
-                <span>{{eq}}</span>
+        <!-- List -->
+        <div
+            class="w-full max-w-[850px] mx-auto text-[#2b3a4a] text-lg md:text-[22px] font-medium leading-[1.6] space-y-4 md:space-y-[18px]">
+            <div *ngFor="let eq of equipments" class="flex items-center">
+                <span
+                    class="mr-3 md:mr-4 text-[#ca9c56] flex-shrink-0 flex items-center justify-center w-[18px] md:w-[20px]">
+                    <svg aria-hidden="true" class="w-[12px] h-[16px] md:w-[14px] md:h-[18px] fill-current"
+                        viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0 384.662V127.338c0-17.818 21.543-26.741 34.142-14.142l128.662 128.662c7.81 7.81 7.81 20.474 0 28.284L34.142 398.804C21.543 411.404 0 402.48 0 384.662z">
+                        </path>
+                    </svg>
+                </span>
+                <span class="block">{{eq}}</span>
             </div>
         </div>
     </section>
 
     <!-- Tooling software Section -->
-    <section class="max-w-4xl w-full mx-auto px-4 py-12 text-center">
-        <div class="inline-block mb-12 border-b-[1.5px] border-gray-800 pb-2 px-6">
-            <h2 class="text-xl md:text-2xl font-bold text-gray-900">Tooling software</h2>
+    <section class="max-w-4xl w-full mx-auto px-4 py-8 md:py-12 flex flex-col items-center">
+        <div class="flex flex-col items-center mb-10 md:mb-16">
+            <h2 class="text-[22px] md:text-[28px] font-bold text-black mb-2">Tooling software</h2>
+            <div class="w-full h-[2px] bg-black max-w-[220px]"></div>
         </div>
 
-        <div class="flex flex-wrap justify-center gap-16 md:gap-32 items-end">
-            <div *ngFor="let soft of software" class="flex flex-col items-center">
-                <img [src]="soft.image" class="h-16 md:h-20 w-auto object-contain mb-5" [alt]="soft.title">
-                <span class="text-sm font-medium text-gray-800">{{soft.title}}</span>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-16 md:gap-32 w-full">
+            <div *ngFor="let soft of software" class="flex flex-col items-center max-w-[280px]">
+                <img [src]="soft.image" class="w-[80%] md:w-full h-auto object-contain mb-6 md:mb-8" [alt]="soft.title">
+                <h3 class="text-xl md:text-2xl font-bold text-black">{{soft.title}}</h3>
             </div>
         </div>
     </section>
 
     <!-- Surface Treatment Section -->
-    <section class="max-w-5xl w-full mx-auto px-4 py-12 mb-16 text-center">
-        <div class="inline-block mb-12 border-b-[1.5px] border-gray-800 pb-2 px-4">
-            <h2 class="text-xl md:text-2xl font-bold text-gray-900">Surface Treatment</h2>
+    <section class="max-w-6xl w-full mx-auto px-4 py-8 md:py-12 mb-16 flex flex-col items-center">
+        <div class="flex flex-col items-center mb-10 md:mb-12">
+            <h2 class="text-[22px] md:text-[28px] font-bold text-black mb-2">Surface Treatment</h2>
+            <div class="w-full h-[2px] bg-black max-w-[260px]"></div>
         </div>
 
-        <div class="flex flex-wrap justify-center gap-6 md:gap-10">
+        <div class="flex flex-wrap justify-center w-full max-w-5xl gap-6 md:gap-10">
             <div *ngFor="let treat of surfaceTreatments"
-                class="w-full sm:w-[calc(50%-1.25rem)] md:w-[30%] max-w-[280px] flex flex-col items-center">
-                <div
-                    class="w-full aspect-video bg-gray-50 flex items-center justify-center mb-4 overflow-hidden shadow-sm">
-                    <img [src]="treat.image" class="w-full h-full object-cover" [alt]="treat.title">
+                class="w-full sm:w-[calc(50%-1.25rem)] md:w-[calc(33.333%-2rem)] flex flex-col items-center group">
+                <div class="w-full overflow-hidden mb-4 md:mb-6 rounded-sm">
+                    <img [src]="treat.image"
+                        class="w-full h-auto object-cover aspect-video group-hover:scale-105 transition-transform duration-500"
+                        [alt]="treat.title">
                 </div>
-                <span class="text-sm font-medium text-gray-800">{{treat.title}}</span>
+                <h3 class="text-base md:text-lg font-bold text-black text-center px-2">{{treat.title}}</h3>
             </div>
         </div>
     </section>

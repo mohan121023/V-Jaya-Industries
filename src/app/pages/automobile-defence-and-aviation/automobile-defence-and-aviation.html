@@ -1,17 +1,15 @@
 <div class="w-full bg-white flex flex-col items-center overflow-x-hidden min-h-screen font-sans">
 
     <!-- Hero Header Background -->
-    <div class="w-full relative bg-[#1e3246] h-[250px] md:h-[350px] flex items-center justify-center overflow-hidden">
+    <div class="w-full relative h-[300px] md:h-[400px] bg-black flex items-center justify-center overflow-hidden">
         <!-- Background Image overlay -->
-        <div class="absolute inset-0 mix-blend-overlay opacity-60 z-0">
-            <!-- Using the air file from earlier context -> /image/air-768x512.jpg -->
-            <img src="/image/air-768x512.jpg" alt="Automobile Defence and Aviation"
-                class="w-full h-full object-cover grayscale">
-        </div>
+        <img src="/image/Automobile Defence and Aviation/Automobile Defence and Aviation (2).jpg"
+            alt="Automobile Defence and Aviation" class="absolute inset-0 w-full h-full object-cover opacity-[0.5]">
 
         <!-- Text -->
-        <div class="relative z-10 text-center px-4 mt-8 md:mt-12">
-            <h1 class="text-3xl md:text-5xl font-bold text-white tracking-wide drop-shadow-md">Automobile Defence and
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-[28px] md:text-[40px] font-bold text-white tracking-wide drop-shadow-md">Automobile Defence
+                and
                 Aviation</h1>
         </div>
     </div>
@@ -76,16 +74,17 @@
         </div>
     </section>
 
-    <!-- Floating Random Masonry Grid matching Screenshot Style -->
+    <!-- Gallery Grid -->
     <section class="max-w-6xl w-full mx-auto px-4 py-8 mb-16">
-        <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+
             <div *ngFor="let img of masonryImages; let i = index"
-                class="break-inside-avoid relative overflow-hidden group rounded-sm flex items-center justify-center p-2 bg-transparent">
-                <!-- Using placeholder items that emulate the silver metallic parts seen on the real screenshot -->
-                <img [src]="'https://placehold.co/400x400/f1f5f9/1e293b?font=playfair-display&text=Aviation+Component+' + (i+1)"
-                    [class]="'w-full max-w-sm object-contain grayscale duration-500 hover:scale-[1.03] ' + img.class"
-                    alt="Defence Component">
+                class="bg-white border border-transparent hover:border-gray-200 hover:shadow-xl transition-all duration-300 rounded-xl overflow-hidden flex items-center justify-center p-2 aspect-square">
+                <img [src]="img.src"
+                    class="w-full h-full object-contain rounded-lg hover:scale-105 transition duration-500"
+                    alt="Automobile Defence Component">
             </div>
+
         </div>
     </section>
 

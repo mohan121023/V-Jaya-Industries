@@ -16,8 +16,8 @@
     justify-content: center;
     min-width: 200px;
     width: 100%;
-    gap: 15px;
-    height: 500px;
+    gap: 20px;
+    height: 400px;
 }
 
 .exp-wrapper .ue_options .ue_option {
@@ -29,10 +29,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    border-radius: 2rem;
+    border-radius: 30px;
     transition: flex-grow 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
     flex-grow: 1;
-    min-width: 80px;
+    min-width: 127px;
 }
 
 .exp-wrapper .ue_options .ue_option::after {
@@ -42,12 +42,12 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.1);
     transition: background-color .3s;
 }
 
 .exp-wrapper .ue_options .ue_option.active::after {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .exp-wrapper .ue_options .ue_option.active {
@@ -72,15 +72,21 @@
     display: flex;
     z-index: 2;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     width: 100%;
     height: 100%;
+    padding: 10px;
+    padding-bottom: 25px;
+    gap: 10px;
 }
 
 .exp-wrapper .ue_options .ue_option.active .ue_label {
+    justify-content: center;
     animation-name: sub-content-fade;
     animation-duration: 0.8s;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 @keyframes sub-content-fade {
@@ -115,7 +121,6 @@
 .exp-wrapper .ue_options .ue_option:not(.active) .ue_label {
     justify-content: flex-end;
     /* Align to the bottom when the text is vertical */
-    padding-bottom: 2rem;
 }
 
 .exp-wrapper .ue_options .ue_option:not(.active) .ue_info {
@@ -162,27 +167,31 @@
     transition: all 0.5s ease;
 }
 
+.ue_sub {
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
 .ue_icon span {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 40px;
+    height: 40px;
     background-color: white;
-    color: #3b07e6;
-    /* Blueish purple color matching your design */
-    border-radius: 9999px;
+    color: blue;
+    border-radius: 50px;
     font-weight: bold;
-    font-size: 0.875rem;
+    font-size: 18px;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     transition: all 0.5s ease;
 }
 
 .ue_option.active .ue_icon span {
-    width: 4rem;
-    /* Larger circle in center for active state */
-    height: 4rem;
-    font-size: 1.25rem;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
 }
 
 @media screen and (max-width: 500px) {

@@ -18,7 +18,7 @@ export class DieCasting {
   ];
 
   metalsWeCast = [
-    { title: 'ZINC/ZAMAK', image: '/image/dia-casting/zinccc.jpg' },
+    { title: 'ZINC ZAMAK', image: '/image/dia-casting/zinccc.jpg' },
     { title: 'ALUMINIUM', image: '/image/dia-casting/aluminium.jpg' },
     { title: 'STEEL CAST IRON', image: '/image/dia-casting/STEEL-CAST-IRON.jpg' },
     { title: 'BRONZE', image: '/image/dia-casting/BRONZE.jpg' },
@@ -35,13 +35,13 @@ export class DieCasting {
     '7 PDC machines 80ton-180tonn (ZINC AND ALUMINIUM)',
     '(Computerized Numerical Control) C.N.C. Wire Cut Machine.',
     '13.V.M.C (Vertical Machining Centre) Machine.',
-    'Metal cutting and stamping (Power Presses)',
+    'Letal cutting and stamping (Power Presses)',
     'Lathe, Grinding, Milling, Drilling, Taping and Lancer.'
   ];
 
   software = [
-    { title: 'AutoCAD', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Autodesk_AutoCAD_Icon_%282021%29.svg/120px-Autodesk_AutoCAD_Icon_%282021%29.svg.png' },
-    { title: 'SolidWORKS', image: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/SolidWorks_Logo.svg' }
+    { title: 'AutoCAD', image: '/image/dia-casting/solidworks-copy.jpg' },
+    { title: 'SolidWORKS', image: '/image/dia-casting/solidworks.jpg' }
   ];
 
   surfaceTreatments = [

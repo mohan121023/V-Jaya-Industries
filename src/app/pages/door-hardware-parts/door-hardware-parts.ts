@@ -20,24 +20,27 @@ export class DoorHardwareParts {
   ];
 
   packagingOptions = [
-    'Clam packs / Blister packs',
+    'Clam packet / Blister',
+    'packs',
     'Skin packing',
     'Printed plastic bags',
-    'Plastic and eco-friendly header cards',
+    'Plastic and eco-friendly',
+    'header cards',
     'Printed box sets'
   ];
 
   finishOptions = [
     'Chrome',
     'Polish chrome',
-    'Brass / Polish brass',
-    'Nickel / Satin Nickel',
+    'Brass Polish brass',
+    'Nickel',
+    'Satin Nickel',
     'Copper',
     'Matt Black',
     'Antique Brass',
     'Antique Copper',
     'Silver',
-    'Oil Rub Bronze',
+    'Oil rub bronze',
     'Powder Coating',
     'Hot Dip',
     'Zinc Galvanizing'
